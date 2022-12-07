@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>React! React! React!</title>
+    <title>React Components</title>
     <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.
@@ -24,16 +24,20 @@ js"></script>
 <body>
     <div id="container"></div>
     <script type="text/babel">
-        var destination = document.querySelector("#container");
+
+        var HelloWorld = React.createClass ({
+            render: function () {
+               return (
+                <p>Hello, componentized world</p>
+               ) 
+            }
+        });
 
         ReactDOM.render(
             <div>
-                <h3>Batman</h3>
-                <h3>Iron Man</h3>
-                <h3>Nicolas Cage</h3>
-                <h3>Mega Man</h3>
+                <p>Hello, world</p>
             </div>,
-            destination
+            document.querySelector("#container")
         );
     </script>
 </body>
