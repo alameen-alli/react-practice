@@ -17,29 +17,41 @@ js"></script>
 
 <body>
     <div id="container"></div>
-    
+
     <script type="text/babel">
 
         var Letter = React.createClass({
             render: function () {
+
+                var letterStyle = {
+                    padding: 10,
+                    margin: 10,
+                    backgroundColor: "#ffde00",
+                    color: "#333",
+                    display: "inline-block",
+                    fontFamily: "monospace",
+                    fontSize: 32,
+                    textAlign: "center"
+                };
+
                 return (
-                    <div>
+                    <div style={letterStyle}>
                         {this.props.children}
-                    </div>
+                    </div >
                 );
             }
         });
 
         var destination = document.querySelector("#container");
 
-        ReactDOM.render (
+        ReactDOM.render(
             <div>
                 <Letter>A</Letter>
                 <Letter>B</Letter>
                 <Letter>C</Letter>
                 <Letter>D</Letter>
                 <Letter>E</Letter>
-            </div>, 
+            </div>,
             destination
         );
 
