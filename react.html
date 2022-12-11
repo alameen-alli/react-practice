@@ -10,38 +10,36 @@ js"></script>
     <style>
         #container {
             padding: 50px;
-            background-color: #EEE;
-        }
-
-        #container h1 {
-            font-size: 48px;
-            font-family: sans-serif;
-            color: #0080A8;
+            background-color: #FFF;
         }
     </style>
 </head>
 
 <body>
     <div id="container"></div>
+    
     <script type="text/babel">
 
-        var HelloWorld = React.createClass ({
+        var Letter = React.createClass({
             render: function () {
-               return (
-                <p>Hello, {this.props.greetTarget}! I am {this.props.ageTarget}</p>
-               ) 
+                return (
+                    <div>
+                        {this.props.children}
+                    </div>
+                );
             }
         });
 
-        ReactDOM.render(
+        var destination = document.querySelector("#container");
+
+        ReactDOM.render (
             <div>
-                <HelloWorld greetTarget="Batman" ageTarget="21"/>
-                <HelloWorld greetTarget="Iron" ageTarget="35"/>
-                <HelloWorld greetTarget="Nicolas Cage" ageTarget="45"/>
-            </div>,
-            document.querySelector("#container")
-        );
+                <Letter>A</Letter>
+            </div>
+        )
+
     </script>
+
 </body>
 
 </html>
